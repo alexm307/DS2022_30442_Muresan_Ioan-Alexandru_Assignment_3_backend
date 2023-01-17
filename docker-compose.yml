@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  demo-db:
+    image: mysql
+    restart: always
+    environment:
+      - MYSQL_DATABASE=city_db
+      - MYSQL_ROOT_PASSWORD=my-secret-pw
+      - MYSQL_HOST_AUTH_METHOD=trust
+    ports:
+      - "3308:3306"
+    container_name: demo-db
+
+  rabbitmq:
+    image: rabbitmq:management
+    restart: always
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  demo-be:
+    image: assignment2
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_RABBITMQ_HOST=rabbitmq
+      - DB_IP=demo-db
+      - DB_PORT=3308
+      - DB_USER=root
+      - DB_PASSWORD=my-secret-pw
+      - DB_DBNAME=city_db
