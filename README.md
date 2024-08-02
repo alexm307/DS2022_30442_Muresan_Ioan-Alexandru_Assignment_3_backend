@@ -21,6 +21,7 @@ This project is a web application designed to monitor the energy consumption of 
 - Java Spring Framework
 - MySQL Database
 - Maven (for dependency management)
+- RabbitMQ (for message transmission)
 - Docker (to run the application as a container)
 
 ## Installation
