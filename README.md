@@ -21,7 +21,7 @@ This project is a web application designed to monitor the energy consumption of 
 - Java Spring Framework
 - MySQL Database
 - Maven (for dependency management)
-- Thymeleaf (for rendering views)
+- Docker (to run the application as a container)
 
 ## Installation
 
